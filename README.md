@@ -2,7 +2,8 @@ psResponsive
 ============
 
 Service to help determine screen size for responsive AngularJS web apps
-
+DEMO
+<a href="http://plnkr.co/edit/yoQAbpFiCUzHQFruRyA8?p=preview">http://plnkr.co/edit/yoQAbpFiCUzHQFruRyA8?p=preview</a>
 
 Download and add ps-responsive.js
 Add to your app
@@ -29,5 +30,3 @@ Use it app wide in your HTML and $scope by attaching it to root scope
     <div ng-show="r('medium')">Show on medium screens only</div>
     
     
-DEMO
-<a href="http://plnkr.co/edit/yoQAbpFiCUzHQFruRyA8?p=preview">http://plnkr.co/edit/yoQAbpFiCUzHQFruRyA8?p=preview</a>
