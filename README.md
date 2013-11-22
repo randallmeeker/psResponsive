@@ -2,8 +2,9 @@ psResponsive
 ============
 
 Service to help determine screen size for responsive AngularJS web apps
+
 DEMO
-<a href="http://plnkr.co/edit/yoQAbpFiCUzHQFruRyA8?p=preview">http://plnkr.co/edit/yoQAbpFiCUzHQFruRyA8?p=preview</a>
+<a target="_blank" href="http://plnkr.co/edit/yoQAbpFiCUzHQFruRyA8?p=preview">http://plnkr.co/edit/yoQAbpFiCUzHQFruRyA8?p=preview</a>
 
 Download and add ps-responsive.js
 Add to your app
