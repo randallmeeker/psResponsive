@@ -1,11 +1,11 @@
 angular.module('psResponsive', [])
 .value('psResponsiveConfig', {
         sizes : [
-					{name:'tiny', minWidth: 0},
-					{name:'small', minWidth: 768},
-					{name:'medium', minWidth: 992},
-					{name:'large', minWidth: 1200}
-				]
+		{name:'tiny', minWidth: 0},
+		{name:'small', minWidth: 768},
+		{name:'medium', minWidth: 992},
+		{name:'large', minWidth: 1200}
+	]
     })
 .factory('$psResponsive', ['$window', '$filter', '$rootScope', 'psResponsiveConfig', 
             function($window, $filter, $rootScope, psResponsiveConfig){
