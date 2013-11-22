@@ -7,7 +7,7 @@ angular.module('psResponsive', [])
 					{name:'large', minWidth: 1200}
 				]
     })
-.factory('$responsive', ['$window', '$filter', '$rootScope', 'psResponsiveConfig', 
+.factory('$psResponsive', ['$window', '$filter', '$rootScope', 'psResponsiveConfig', 
             function($window, $filter, $rootScope, psResponsiveConfig){
 	
 
