@@ -18,14 +18,15 @@ angular.module('psResponsive', [])
         function($window, $filter, $rootScope, psResponsiveConfig) {
 
 
-            var opRegEx = /[<>]\s\w+/
+            var opRegEx = /[<>]=?\s\w+/
             var forEach = angular.forEach,
                 filter = angular.filter,
-                sizes = psResponsiveConfig.sizes,
-                sizes = $filter('orderBy')(sizes, '-minWidth')
+                sizes = psResponsiveConfig.sizes;
 
-                var getHeight = function() {
-                    return $window.innerHeight
+            sizes = $filter('orderBy')(sizes, '-minWidth')
+
+            var getHeight = function() {
+                return $window.innerHeight
             },
 
                 getWidth = function() {
@@ -52,7 +53,7 @@ angular.module('psResponsive', [])
                         against = test.split(' ')[1];
 
                     if (isNaN(against)) {
-                        return eval('(' + getWidth() + thingy + getWidthFromLabel(against) + ')');
+                        return eval('(' + getWidth() + ' ' + thingy + ' ' + getWidthFromLabel(against) + ')');
                     } else {
                         return eval('(' + getWidth() + thingy + parseInt(against) + ')');
                     }
