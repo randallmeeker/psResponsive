@@ -64,7 +64,6 @@ angular.module('psResponsive', [])
 			return getHeight();
 		} else if (opRegEx.test(onwha)){
             return getTest(onwha);
-			// check if onwha has a space in it
 		} else {
 			return (getLabel() == onwha)
 		}
