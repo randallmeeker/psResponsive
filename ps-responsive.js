@@ -18,19 +18,19 @@ angular.module('psResponsive', [])
         function($window, $filter, $rootScope, psResponsiveConfig) {
 
 
-            var opRegEx = /[<>]=?\s\w+/
-            var forEach = angular.forEach,
+            var opRegEx = /[<>]=?\s\w+/,
+                forEach = angular.forEach,
                 filter = angular.filter,
                 sizes = psResponsiveConfig.sizes;
+            
+            sizes = $filter('orderBy')(sizes, '-minWidth');
 
-            sizes = $filter('orderBy')(sizes, '-minWidth')
-
-            var getHeight = function() {
-                return $window.innerHeight
+                var getHeight = function() {
+                    return $window.innerHeight;
             },
 
                 getWidth = function() {
-                    return $window.innerWidth
+                    return $window.innerWidth;
                 },
 
                 getLabel = function() {
@@ -38,7 +38,7 @@ angular.module('psResponsive', [])
                         returnVal = false;
                     for (var i = 0; i < sizes.length; i++) {
                         if (parseInt(cWidth) >= parseInt(sizes[i].minWidth)) {
-                            return sizes[i].name
+                            return sizes[i].name;
                         }
                     }
                 },
@@ -53,29 +53,36 @@ angular.module('psResponsive', [])
                         against = test.split(' ')[1];
 
                     if (isNaN(against)) {
-                        return eval('(' + getWidth() + ' ' + thingy + ' ' + getWidthFromLabel(against) + ')');
+                        return eval('(' + getWidth() + ' ' + thingy +  ' ' + getWidthFromLabel(against) + ')');
                     } else {
                         return eval('(' + getWidth() + thingy + parseInt(against) + ')');
                     }
-                }
+                },
+
+                getOrientation = function(){
+                    if(getHeight() > getWidth()) return 'portrait';
+                    else return 'landscape';
+                };
 
             angular.element($window).on('resize', function() {
                 $rootScope.$digest();
-            })
+            });
 
             return function(onwha) {
                 if (!onwha) {
-                    return getLabel()
+                    return getLabel();
                 } else if (onwha == 'width') {
                     return getWidth();
                 } else if (onwha == 'height') {
                     return getHeight();
+                } else if (onwha == 'orientation') {
+                    return getOrientation();
                 } else if (opRegEx.test(onwha)) {
                     return getTest(onwha);
                 } else {
-                    return (getLabel() == onwha)
+                    return (getLabel() == onwha);
                 }
                 return false;
-            }
+            };
         }
-    ])
+    ]);
