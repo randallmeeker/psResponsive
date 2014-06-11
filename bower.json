@@ -1,7 +1,7 @@
 {
   "name": "psResponsive",
-  "version": "0.0.2",
-  "main": "./ps-responsive.js",
+  "version": "0.0.3",
+  "main": ["ps-responsive.js"],
   "dependencies": {
     "angular": ">= 1.0.8"
   }
