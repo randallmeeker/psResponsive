@@ -29,6 +29,7 @@ Use it app wide in your HTML and $scope by attaching it to root scope
     <div ng-show="r('> small')">Show on screens larger than small</div>
     <div ng-show="r('< 500')">Show on screens less than 500px</div>
     <div ng-show="r('medium')">Show on medium screens only</div>
+    <div ng-show="r('orientation') == 'landscape'">Show on landscape</div>
 
 Define your own screen size labels (default sizes are based on twitter bootstrap)
 
