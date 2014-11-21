@@ -45,7 +45,7 @@ angular.module('psResponsive', [])
                 getWidthFromLabel = function(label) {
                     return $filter('filter')(sizes, {
                         name: label
-                    })[0]["minWidth"];
+                    }, true)[0]["minWidth"];
                 },
 
                 getTest = function(test) {
